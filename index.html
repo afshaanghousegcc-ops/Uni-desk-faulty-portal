@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7fbff">
+  <title>UniDesk · Faculty Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=unidesk-1">
+</head>
+<body>
+  <section class="login" id="login">
+    <div class="login-panel">
+      <div class="brand-mark">U</div>
+      <p class="eyebrow">FACULTY PORTAL</p>
+      <h1>Welcome to<br>UniDesk.</h1>
+      <p class="login-lead">Your classes, students, notices, and staff details in one place.</p>
+      <form id="loginForm" class="login-form">
+        <div id="registerFields" hidden>
+          <label for="registerName">TEACHER NAME</label>
+          <input id="registerName" autocomplete="name" placeholder="Your name">
+          <label for="registerStaffId">STAFF ID</label>
+          <input id="registerStaffId" autocomplete="off" placeholder="Staff ID">
+          <label for="registerDepartment">DEPARTMENT</label>
+          <input id="registerDepartment" placeholder="Department">
+          <label for="registerRole">ACCOUNT ROLE</label>
+          <select id="registerRole"><option value="faculty">Faculty</option><option value="hr">HR / Approver</option></select>
+          <small id="roleHint" class="role-hint">The first HR account can review and approve leave requests.</small>
+        </div>
+        <label for="loginEmail">WORK EMAIL</label>
+        <input id="loginEmail" type="email" autocomplete="username" placeholder="name@college.edu" required>
+        <label for="loginPassword">PASSWORD</label>
+        <input id="loginPassword" type="password" autocomplete="current-password" placeholder="At least 8 characters" required>
+        <button class="primary-button" id="loginSubmit">Sign in</button>
+      </form>
+      <button class="link-button" id="accountModeToggle" type="button">Create account</button>
+      <p class="login-note">Faculty access for attendance, student records, circulars, events, and HR.</p>
+    </div>
+    <div class="login-art" aria-hidden="true"><div class="art-sun"></div><div class="art-hill hill-one"></div><div class="art-hill hill-two"></div><div class="art-card"><span>YOUR CAMPUS</span><b>A smoother day starts here.</b><small>Faculty workspace · All in one view</small></div></div>
+  </section>
+
+  <div class="app" id="app" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="#dashboard"><span class="brand-mark small-mark">U</span><span>Uni<br>Desk</span></a>
+      <p class="nav-caption" id="workspaceCaption">FACULTY WORKSPACE</p>
+      <nav class="side-links" aria-label="Main navigation">
+        <button class="side-link selected" data-page="dashboard"><span>⌂</span>Overview</button>
+        <button class="side-link" data-page="attendance"><span>✓</span>Attendance</button>
+        <button class="side-link" data-page="circulars"><span>▤</span>Circulars</button>
+        <button class="side-link" data-page="events"><span>▦</span>Events &amp; Holidays</button>
+        <button class="side-link" data-page="students"><span>♧</span>Students</button>
+        <button class="side-link" data-page="hr"><span>◷</span><span class="side-label" id="hrNavLabel">My HR</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="profile-mini"><span class="avatar" id="userAvatar">F</span><span><b id="facultyName">Faculty</b><small id="facultyStaffId">Staff ID</small></span></div>
+        <button class="side-link logout-link" id="logoutButton"><span>↪</span>Log out</button>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><div><p class="eyebrow" id="topEyebrow">YOUR CAMPUS, IN SYNC</p><h1 id="pageTitle">Overview</h1></div><div class="top-date" id="todayLabel"></div></header>
+      <div class="page-wrap">
+        <section class="page active" id="page-dashboard">
+          <div class="welcome-card"><div><p class="eyebrow">FACULTY DASHBOARD</p><h2>Good day, <span id="welcomeName">Teacher</span>.</h2><p>Keep your campus day organized from one simple workspace.</p><button class="primary-button compact" data-go="attendance">Take attendance <span>→</span></button></div></div>
+          <div class="summary-grid">
+            <button class="summary-card" data-go="students"><span class="summary-icon blue">♧</span><small>Students listed</small><b id="summaryStudents">0</b><span class="summary-link">Open student list →</span></button>
+            <button class="summary-card" data-go="circulars"><span class="summary-icon aqua">▤</span><small>Latest circulars</small><b id="summaryCirculars">0</b><span class="summary-link">View notices →</span></button>
+            <button class="summary-card" data-go="events"><span class="summary-icon lilac">▦</span><small>Upcoming dates</small><b id="summaryEvents">0</b><span class="summary-link">See calendar →</span></button>
+        <button class="summary-card" data-go="hr"><span class="summary-icon gold">◷</span><small id="summaryLeaveLabel">My pending leave requests</small><b id="summaryLeaves">0</b><span class="summary-link">Open My HR →</span></button>
+          </div>
+        <section class="surface overview-note"><div><p class="eyebrow">YOUR NEXT STEP</p><h3>Start with today’s roll call</h3><p>Choose a course, group, semester, and subject to see the full student list.</p></div><button class="soft-button" data-go="attendance">Open attendance <span>→</span></button></section>
+        </section>
+
+        <section class="page" id="page-attendance">
+          <div class="page-heading"><div><h2>Class attendance</h2><p>Choose the class to see its student list, then mark each student present, absent, or late.</p></div></div>
+          <section class="surface filter-surface">
+            <div class="filter-grid">
+              <label>Course<select id="attCourse"><option>BCA</option><option>B.Sc</option><option>B.Com</option></select></label>
+              <label>Group<select id="attGroup"><option>Group A</option><option>Group B</option><option>Group C</option></select></label>
+              <label>Semester<select id="attSemester"></select></label>
+              <label>Subject<input id="attSubject" placeholder="e.g. Database Systems" value="Class attendance"></label>
+              <label>Date<input id="attDate" type="date"></label>
+            </div>
+          </section>
+          <section class="surface roster-surface"><div class="section-head"><div><h3>Student list</h3><p id="rosterCaption">Choose a course, group, and semester to load the student list.</p></div><button class="soft-button small-button" id="refreshRoster">Refresh list</button></div><div class="roster-header"><span>STUDENT</span><span>STATUS</span><span>MARK ATTENDANCE</span></div><div id="attendanceRoster" class="roster-list"></div></section>
+        </section>
+
+        <section class="page" id="page-circulars">
+          <div class="page-heading"><div><h2>Circulars</h2><p>Post notices students need to see.</p></div></div>
+          <div class="two-column">
+            <form id="circularForm" class="surface form-surface"><p class="eyebrow">NEW NOTICE</p><h3>Write a circular</h3><label>Notice title<input name="title" required maxlength="160" placeholder="e.g. Internal assessment schedule"></label><label>Audience<select name="audience"><option>All students</option><option>BCA</option><option>B.Sc</option><option>B.Com</option></select></label><label>Message<textarea name="message" required rows="6" placeholder="Write the notice details..."></textarea></label><button class="primary-button">Publish circular</button></form>
+            <section class="surface list-surface"><div class="section-head"><div><h3>Published notices</h3><p>Most recent first</p></div></div><div id="circularList" class="card-list"></div></section>
+          </div>
+        </section>
+
+        <section class="page" id="page-events">
+          <div class="page-heading"><div><h2>Events &amp; Holidays</h2><p>Keep the academic calendar up to date for a particular year.</p></div><label class="year-picker">YEAR<input id="eventYear" type="number" min="2020" max="2100"></label></div>
+          <div class="two-column">
+            <form id="eventForm" class="surface form-surface"><p class="eyebrow">CAMPUS CALENDAR</p><h3>Add an event or holiday</h3><label>Name<input name="title" required placeholder="e.g. Independence Day"></label><label>Type<select name="kind"><option>Holiday</option><option>Event</option></select></label><label>Date<input name="date" type="date" required></label><label>Details (optional)<textarea name="details" rows="4" placeholder="Add a short note"></textarea></label><button class="primary-button">Add to calendar</button></form>
+            <section class="surface list-surface"><div class="section-head"><div><h3 id="eventListTitle">Calendar dates</h3><p>Events and holidays by date</p></div></div><div id="eventList" class="card-list"></div></section>
+          </div>
+        </section>
+
+        <section class="page" id="page-students">
+          <div class="page-heading"><div><h2>Students</h2><p>Manage student names and roll numbers by course, group, and semester.</p></div></div>
+          <form id="studentForm" class="surface student-form"><label>Roll number<input name="rollNumber" required placeholder="e.g. 24BCA012"></label><label>Student name<input name="name" required placeholder="Full name"></label><label>Course<select name="course"><option>BCA</option><option>B.Sc</option><option>B.Com</option></select></label><label>Group<select name="group"><option>Group A</option><option>Group B</option><option>Group C</option></select></label><label>Semester<select name="semester"></select></label><button class="primary-button">Add student</button></form>
+          <section class="surface roster-surface"><div class="student-toolbar"><div class="student-filters"><select id="studentCourse"><option value="">All courses</option><option>BCA</option><option>B.Sc</option><option>B.Com</option></select><select id="studentGroup"><option value="">All groups</option><option>Group A</option><option>Group B</option><option>Group C</option></select><select id="studentSemester"><option value="">All semesters</option></select></div><input id="studentSearch" type="search" placeholder="Search name or roll number"></div><div class="roster-header students-header"><span>ROLL NUMBER</span><span>STUDENT NAME</span><span>COURSE · GROUP · SEMESTER</span></div><div id="studentList" class="roster-list"></div></section>
+        </section>
+
+        <section class="page" id="page-hr">
+          <div class="page-heading"><div><h2 id="hrPageHeading">My HR</h2><p id="hrPageDescription">Your profile and your own leave requests.</p></div></div>
+          <div class="two-column hr-columns" id="facultyHrView">
+            <section class="surface list-surface"><div class="section-head"><div><h3>Your profile</h3><p>Only your signed-in account details</p></div></div><div id="teacherList" class="card-list"></div></section>
+            <section class="surface list-surface"><div class="section-head"><div><h3>Your leave requests</h3><p>Only your own leave dates and request status</p></div></div><form id="leaveForm" class="leave-form"><label>From<input type="date" name="startDate" required></label><label>To<input type="date" name="endDate" required></label><label>Reason<input name="reason" placeholder="Optional note"></label><button class="primary-button">Request leave</button></form><div id="leaveList" class="card-list"></div></section>
+          </div>
+          <div class="two-column hr-columns" id="hrAdminView" hidden>
+            <section class="surface list-surface"><div class="section-head"><div><h3>Teacher directory</h3><p>Faculty records and departments</p></div></div><form id="teacherForm" class="inline-form"><input name="name" required placeholder="Teacher name"><input name="staffId" required placeholder="Staff ID"><input name="email" type="email" placeholder="Email"><input name="department" placeholder="Department"><button class="primary-button">Add teacher record</button></form><div id="hrTeacherList" class="card-list"></div></section>
+            <section class="surface list-surface"><div class="section-head"><div><h3>Leave approvals</h3><p>Review faculty leave requests</p></div></div><div id="approvalList" class="card-list"></div></section>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js?v=unidesk-1" defer></script>
+</body>
+</html>

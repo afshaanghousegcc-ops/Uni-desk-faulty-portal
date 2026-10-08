@@ -1,0 +1,182 @@
+{
+  "users": {
+    "afsh@college.edu": {
+      "id": "f501729855db2b3953b90f39",
+      "email": "afsh@college.edu",
+      "name": "afsha",
+      "staffId": "456912689",
+      "salt": "dd6a69a3e41eddeea0ff698eb13a3be8",
+      "passwordHash": "82797c5881395d29e8fbc2c678a48032552524217b1338b50a0b08b52181dbddcfaf754892a8b3c997d376d5b172a60dcfe6606a0343e99877ad7a037a6ec12e",
+      "createdAt": "2026-09-30T18:30:17.498Z"
+    },
+    "check@invalid": {
+      "id": "ea12b2748dbc43298aa4d34c",
+      "email": "check@invalid",
+      "name": "x",
+      "staffId": "X",
+      "salt": "64e0e6563bb584635e5fdfc6939f1cd3",
+      "passwordHash": "17838caf83933dfe70f8dbdee75f2f45dc0e8a5013c0babbad3bda20c7e0acccafc13fde3d607ef08e96881470ad898ae80a3d23969998e6a8b319cc63042efc",
+      "createdAt": "2026-09-30T18:45:32.600Z"
+    },
+    "asiya@college.edu": {
+      "id": "ddec3a12a84764f10daf598e",
+      "email": "asiya@college.edu",
+      "name": "asiya",
+      "staffId": "9564",
+      "salt": "4fe39d71aa7bccd894bb946ae1fd1534",
+      "passwordHash": "8bc417bf13e4fc33b2ee49243a745eafdae0cad52712e793cd068ee59e0304d004c0e8ce7b447cc20b060fdb4d48ba4a9738792b2b8396d802a9af41110f4e2f",
+      "createdAt": "2026-09-30T18:56:59.813Z"
+    },
+    "arfiya@college.edu": {
+      "id": "6013d9505b825f00bcc08f7e",
+      "email": "arfiya@college.edu",
+      "name": "arfiya",
+      "staffId": "8888",
+      "salt": "e9d8b416f55aac2508e081913120b91e",
+      "passwordHash": "f1fddbc68d7eed257d9ca12b9865780d65cc528d3ab033882103082945a34aca83e26e58c00d00c42c46b4477169e905c4dbf63fc265486a70ce68c57d61b090",
+      "createdAt": "2026-09-30T19:07:02.483Z"
+    },
+    "afroz@college.edu": {
+      "id": "db38f0cdbcf59635c9bda341",
+      "email": "afroz@college.edu",
+      "name": "afroz",
+      "staffId": "1234",
+      "role": "hr",
+      "salt": "078f669a4e30a170ce0cd26c72d0885f",
+      "passwordHash": "f2fdd81f1582d92d44ae1f830b94cc8de9fdaaf6bc2f53d93ec0bd08a17fb8f5fcb579a454fc2e8a359698839a4eba382d3973e5a723c812897cde8648ae372c",
+      "createdAt": "2026-09-30T19:27:27.576Z"
+    }
+  },
+  "students": [
+    {
+      "id": "a9896c16f42655de8fb286dc",
+      "rollNumber": "01",
+      "name": "Afshaan Ghouse",
+      "course": "BCA",
+      "semester": "Semester 5",
+      "group": "Group A",
+      "createdAt": "2026-09-30T18:32:48.897Z"
+    }
+  ],
+  "attendance": [
+    {
+      "id": "199f073320ca411c4fe18454",
+      "studentId": "a9896c16f42655de8fb286dc",
+      "rollNumber": "01",
+      "studentName": "Afshaan Ghouse",
+      "course": "BCA",
+      "semester": "Semester 5",
+      "group": "Group A",
+      "subject": "Class attendance",
+      "date": "2026-09-30",
+      "status": "present",
+      "markedBy": "456912689",
+      "markedAt": "2026-09-30T18:34:20.484Z"
+    },
+    {
+      "id": "73ff7306cc72fafc056e2a36",
+      "studentId": "a9896c16f42655de8fb286dc",
+      "rollNumber": "01",
+      "studentName": "Afshaan Ghouse",
+      "course": "BCA",
+      "semester": "Semester 5",
+      "group": "Group A",
+      "subject": "Class attendance",
+      "date": "2026-10-01",
+      "status": "present",
+      "markedBy": "9564",
+      "markedAt": "2026-09-30T19:01:31.295Z"
+    }
+  ],
+  "circulars": [],
+  "events": [],
+  "teachers": [
+    {
+      "id": "f501729855db2b3953b90f39",
+      "name": "afsha",
+      "staffId": "456912689",
+      "email": "afsh@college.edu",
+      "department": "Computer Science"
+    },
+    {
+      "id": "ea12b2748dbc43298aa4d34c",
+      "name": "x",
+      "staffId": "X",
+      "email": "check@invalid",
+      "department": "Faculty"
+    },
+    {
+      "id": "ddec3a12a84764f10daf598e",
+      "name": "asiya",
+      "staffId": "9564",
+      "email": "asiya@college.edu",
+      "department": "engineering"
+    },
+    {
+      "id": "6013d9505b825f00bcc08f7e",
+      "name": "arfiya",
+      "staffId": "8888",
+      "email": "arfiya@college.edu",
+      "department": "engineering"
+    },
+    {
+      "id": "db38f0cdbcf59635c9bda341",
+      "name": "afroz",
+      "staffId": "1234",
+      "email": "afroz@college.edu",
+      "department": "computer science"
+    }
+  ],
+  "leaves": [
+    {
+      "id": "ed6d42220e443366a2ce04aa",
+      "teacherName": "arfiya",
+      "staffId": "8888",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-01",
+      "reason": "fever",
+      "status": "Pending",
+      "createdBy": "arfiya",
+      "createdById": "6013d9505b825f00bcc08f7e",
+      "createdAt": "2026-09-30T19:07:25.941Z"
+    },
+    {
+      "id": "4c96f8551203d736b90c59ab",
+      "teacherName": "arfiya",
+      "staffId": "8888",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-01",
+      "reason": "fever",
+      "status": "Pending",
+      "createdBy": "arfiya",
+      "createdById": "6013d9505b825f00bcc08f7e",
+      "createdAt": "2026-09-30T19:07:30.260Z"
+    },
+    {
+      "id": "35c8af880760c097a74da124",
+      "teacherName": "arfiya",
+      "staffId": "8888",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-01",
+      "reason": "fever",
+      "status": "Pending",
+      "createdBy": "arfiya",
+      "createdById": "6013d9505b825f00bcc08f7e",
+      "createdAt": "2026-09-30T19:07:40.561Z"
+    },
+    {
+      "id": "4933d3f1467b1c3de4cd683c",
+      "teacherName": "arfiya",
+      "staffId": "8888",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-01",
+      "reason": "fever",
+      "status": "Approved",
+      "createdBy": "arfiya",
+      "createdById": "6013d9505b825f00bcc08f7e",
+      "createdAt": "2026-09-30T19:07:44.177Z",
+      "reviewedBy": "afroz",
+      "reviewedAt": "2026-09-30T19:27:36.509Z"
+    }
+  ]
+}
